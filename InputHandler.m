@@ -10,31 +10,21 @@
 
 @implementation InputHandler;
 
-+ (NSInteger) userInput {
++ (NSString*) userInput: (NSString*) prompt{
+
+    //char userInputChar [255];
     
-    char userInputChar [255];
+    NSLog (@"%@", prompt);
+
+    char userInput [255];
     
+    fgets(userInput,255,stdin);
     
-    fgets(userInputChar,255,stdin);
+    NSString *trimmedInput = [[ NSString stringWithCString:userInput encoding: NSUTF8StringEncoding] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
-    NSString *userInputString = [NSString stringWithCString:userInputChar encoding: NSUTF8StringEncoding];
-    
-    NSString *trimmedInput = [userInputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    
-    NSInteger *answer = [trimmedInput integerValue];
-    
-    NSLog(@"%@",trimmedInput);
-    
-    //return self.userAnswer = trimmedInput;
+    return trimmedInput;
     
 }
 
-/*- (instancetype)initWithAnswer: (NSInteger) myAnswer
-{
-    self = [super init];
-    if (self) {
-        self.myAnswer = answer;
-    }
-    return self;
-}*/
+
 @end

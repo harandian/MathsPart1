@@ -13,7 +13,6 @@
 @property NSInteger userAnswer;
 
 
-+ (NSInteger) userInput;
-
++ (NSString*) userInput: (NSString*) prompt;
 
 @end

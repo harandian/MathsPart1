@@ -27,49 +27,12 @@
     return self;
 }
 
-- (NSString *) Question {
+- (NSString *) question {
     
-    return [NSString stringWithFormat:@"What is %ld + %ld?\n", (long)self.num1, (long)self.num2];
+    return [NSString stringWithFormat:@"What is %ld + %ld?\nPlease enter a number or quit to exit:\n", (long)self.num1, (long)self.num2];
     
 }
 
 
 @end
 
-//- (BOOL) checkAnswer:(NSInteger) userAnswer {
-
-
-
-// }
-
-
-/*self.win = FALSE;
- 
- char userInputChar [255];
- 
- 
- while (self.win == FALSE) {
- 
- printf("Enter text\n");
- fgets(userInputChar,255,stdin);
- 
- NSString *userInputString = [NSString stringWithCString:userInputChar encoding: NSUTF8StringEncoding];
- 
- //NSInteger stringLength = [userInputString length];
- 
- //NSLog(@"String lenght is:%d",stringLength);
- self.userAnswer = [userInputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
- 
- //NSLog(@"%@",self.userAnswer);
- //stringLength = [self.userAnswer length];
- //NSLog(@"String lenght is:%d",stringLength);
- 
- 
- if (_userAnswer == _numAnswer) {
- return self.win = TRUE;
- printf("Correct");
- } else {
- printf("wrong");
- }
- 
- return 0;*/

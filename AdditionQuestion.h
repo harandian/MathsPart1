@@ -17,10 +17,6 @@
 
 
 - (instancetype)init;
-- (NSString *) Question;
-//- (BOOL) checkAnswer:(NSInteger) userAnswer;
+- (NSString *) question;
 
-
-
-//- (NSString) generateRandomQuestion;
 @end
