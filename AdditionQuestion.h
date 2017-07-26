@@ -13,10 +13,16 @@
 
 @property NSInteger num1;
 @property NSInteger num2;
-@property NSInteger numAnswer;
+@property (nonatomic) NSInteger numAnswer;
+@property NSDate *startTime;
+@property NSDate *endTime;
+
+
 
 
 - (instancetype)init;
 - (NSString *) question;
+- (NSTimeInterval) answerTime;
+
 
 @end

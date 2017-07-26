@@ -20,11 +20,11 @@
     return self;
 }
 
-- (NSString *) score: (NSInteger)right andWrong: (NSInteger)wrong {
+- (NSString *) score {
     
-    float average = right/(right+wrong);
+    float average = (self.rightAnswer)/(self.rightAnswer+self.wrongAnswer);
    
-    return [NSString stringWithFormat: @"You have given %ld right and %ld wrong answers, your average is %.2f%%",(long)right,(long)wrong,(average *100)];
+    return [NSString stringWithFormat: @"You have given %.0f right and %.0f wrong answers, your average is %.1f %%",self.rightAnswer,self.wrongAnswer,(average * 100)];
     
 }
 

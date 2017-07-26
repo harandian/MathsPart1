@@ -10,10 +10,10 @@
 
 @interface ScoreKeeper : NSObject
 
-@property NSInteger rightAnswer;
-@property NSInteger wrongAnswer;
+@property float rightAnswer;
+@property float wrongAnswer;
 
-- (NSString *) score: (NSInteger)right andWrong: (NSInteger)wrong;
+- (NSString *) score;
 
 
 

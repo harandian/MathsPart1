@@ -16,54 +16,42 @@ int main(int argc, const char * argv[]) {
         
         BOOL gameRun = YES;
         
-        NSInteger rightScore = 0;
-        NSInteger wrongScore = 0;
-        
-        
         ScoreKeeper *scorethisround = [[ScoreKeeper alloc] init];
         
         while (gameRun == YES ){
             
             AdditionQuestion *randomQuestion = [[AdditionQuestion alloc] init];
             
+            NSLog(@"%@", [randomQuestion startTime]);
+            
             NSString *userAnswer = [InputHandler userInput:[randomQuestion question]];
             
-            if ([userAnswer  isNotEqualTo: @"Quit"] || [userAnswer  isNotEqualTo: @"quit"]) {
-                
-                NSInteger answerInINt = [userAnswer integerValue];
-                NSLog(@"%ld",(long)answerInINt);
-                
-                if (answerInINt == randomQuestion.numAnswer) {
-                    
-                    printf("Right!\n");
-                    rightScore++;
-                    
-                    NSLog(@"%@",[scorethisround score:rightScore andWrong:wrongScore]);
-                    
-                    gameRun = YES;
-                    
-                }
-                
-                else {
-                    
-                    printf("Wrong!\n");
-                    wrongScore ++;
-                    NSLog(@"%@",[scorethisround score:rightScore andWrong:wrongScore]);
-                    
-                }
-                
-                
-            } else if ([userAnswer  isEqual: @"Quit"]) {
+            if ([userAnswer  isEqual: @"Quit"] || [userAnswer  isEqualTo: @"quit"]){
                 
                 printf("Thank you for playing\n");
-                
                 gameRun = NO;
+                
+            } else if ([userAnswer  isNotEqualTo: @"Quit"] || [userAnswer  isNotEqualTo: @"quit"]) {
+                
+                NSInteger answerInt = [userAnswer integerValue];
+                NSLog(@"%ld",(long)answerInt);
+                
+                if (answerInt == randomQuestion.numAnswer) {
+                    
+                    printf("Right!\n");
+                    scorethisround.rightAnswer ++;
+                    NSLog(@"%@",[scorethisround score]);
+                    
+                } else {
+                    
+                    printf("Wrong!\n");
+                    scorethisround.wrongAnswer ++;
+                    NSLog(@"%@",[scorethisround score]);
+                }
+                NSLog(@"%f",[randomQuestion answerTime]);
+                
             }
         }
-        
-        
-        
-        
         
         
         
