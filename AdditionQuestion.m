@@ -29,7 +29,7 @@
 
 - (NSString *) question {
     
-    return [NSString stringWithFormat:@"What is %ld + %ld?\nPlease enter a number or quit to exit:\n", (long)self.num1, (long)self.num2];
+    return [NSString stringWithFormat:@"\nWhat is %ld + %ld?\nPlease enter a number or quit to exit:\n", (long)self.num1, (long)self.num2];
     
 }
 
@@ -39,12 +39,10 @@
 }
 
 - (NSTimeInterval) answerTime {
-    
-    //NSTimeInterval *gameTime = self.startTime - self.endTime;
-    
+        
     NSTimeInterval gameTime = [self.endTime timeIntervalSinceDate:self.startTime];
-   
-    NSLog(@"%f", gameTime);
+    
+    NSLog(@"YOU TOOK THIS MUCH TIME %.1f seconds", gameTime);
     return gameTime;
 
 }

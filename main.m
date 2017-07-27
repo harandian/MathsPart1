@@ -10,6 +10,8 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,6 +20,10 @@ int main(int argc, const char * argv[]) {
         
         ScoreKeeper *scorethisround = [[ScoreKeeper alloc] init];
         
+        QuestionManager *questionList = [[QuestionManager alloc] init];
+        
+
+        
         while (gameRun == YES ){
             
             AdditionQuestion *randomQuestion = [[AdditionQuestion alloc] init];
@@ -25,6 +31,11 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", [randomQuestion startTime]);
             
             NSString *userAnswer = [InputHandler userInput:[randomQuestion question]];
+            
+            
+
+            
+            NSLog(@"the array has!!!!!!! %@",questionList.questions);
             
             if ([userAnswer  isEqual: @"Quit"] || [userAnswer  isEqualTo: @"quit"]){
                 
@@ -40,15 +51,24 @@ int main(int argc, const char * argv[]) {
                     
                     printf("Right!\n");
                     scorethisround.rightAnswer ++;
-                    NSLog(@"%@",[scorethisround score]);
+
                     
                 } else {
                     
                     printf("Wrong!\n");
                     scorethisround.wrongAnswer ++;
                     NSLog(@"%@",[scorethisround score]);
+
                 }
                 NSLog(@"%f",[randomQuestion answerTime]);
+                
+                NSNumber *timeKeeper = [NSNumber numberWithDouble: [randomQuestion answerTime]];
+
+                [questionList.questions addObject: timeKeeper];
+
+                
+
+
                 
             }
         }
