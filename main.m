@@ -18,6 +18,7 @@ int main(int argc, const char * argv[]) {
         
         BOOL gameRun = YES;
         
+        
         ScoreKeeper *scorethisround = [[ScoreKeeper alloc] init];
         
         QuestionManager *questionList = [[QuestionManager alloc] init];
@@ -28,9 +29,12 @@ int main(int argc, const char * argv[]) {
             
             AdditionQuestion *randomQuestion = [[AdditionQuestion alloc] init];
             
-            NSLog(@"%@", [randomQuestion startTime]);
+            
+            //NSLog(@"%@", [randomQuestion startTime]);
             
             NSString *userAnswer = [InputHandler userInput:[randomQuestion question]];
+            
+          
             
             NSLog(@"the array has!!!!!!! %@",questionList.questions);
             
@@ -60,10 +64,10 @@ int main(int argc, const char * argv[]) {
                 //NSLog(@"%f",[randomQuestion answerTime]);
                 
                 NSNumber *timeKeeper = [NSNumber numberWithDouble: [randomQuestion answerTime]];
-
+                
                 [questionList.questions addObject: timeKeeper];
                 
-                questionList.timeOutput;
+                [questionList timeOutput];
 
                 
 

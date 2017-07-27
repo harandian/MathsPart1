@@ -15,14 +15,15 @@
 {
     self = [super init];
     if (self) {
-        self.questions = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithDouble:1.1f], nil];
+        //self.questions = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithDouble:1.1f], nil];
+        self.questions = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (NSString *) timeOutput {
-
-    NSInteger sumOfTime = 0;
+    
+    float sumOfTime = 0;
     
     for (NSNumber *num in self.questions)
     {
@@ -32,7 +33,7 @@
     
     float avgTime = sumOfTime/ [self.questions count];
     
-    NSLog(@"Total time you took was: %ld Seconds with an average time of: %.1f seconds",(long)sumOfTime, avgTime);
+    NSLog(@"Total time you took was: %.2f Seconds with an average time of: %.2f seconds", sumOfTime, avgTime);
     
     NSString *closer = @"DELETE THIS!";
     return closer;
