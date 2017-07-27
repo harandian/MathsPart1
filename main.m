@@ -32,9 +32,6 @@ int main(int argc, const char * argv[]) {
             
             NSString *userAnswer = [InputHandler userInput:[randomQuestion question]];
             
-            
-
-            
             NSLog(@"the array has!!!!!!! %@",questionList.questions);
             
             if ([userAnswer  isEqual: @"Quit"] || [userAnswer  isEqualTo: @"quit"]){
@@ -60,11 +57,13 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"%@",[scorethisround score]);
 
                 }
-                NSLog(@"%f",[randomQuestion answerTime]);
+                //NSLog(@"%f",[randomQuestion answerTime]);
                 
                 NSNumber *timeKeeper = [NSNumber numberWithDouble: [randomQuestion answerTime]];
 
                 [questionList.questions addObject: timeKeeper];
+                
+                questionList.timeOutput;
 
                 
 

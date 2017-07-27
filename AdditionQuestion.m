@@ -42,7 +42,7 @@
         
     NSTimeInterval gameTime = [self.endTime timeIntervalSinceDate:self.startTime];
     
-    NSLog(@"YOU TOOK THIS MUCH TIME %.1f seconds", gameTime);
+   NSLog(@"YOU TOOK THIS MUCH TIME %.1f seconds", gameTime);
     return gameTime;
 
 }

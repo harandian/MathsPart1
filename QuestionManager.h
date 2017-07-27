@@ -14,6 +14,6 @@
 
 - (instancetype)init;
 
-//- (NSString *) timeOutput;
+- (NSString *) timeOutput;
 
 @end

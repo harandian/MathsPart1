@@ -20,10 +20,22 @@
     return self;
 }
 
-//- (NSString *) timeOutput {
+- (NSString *) timeOutput {
+
+    NSInteger sumOfTime = 0;
     
-  //  NSLog(@"You have played for %@",[self.questions])
+    for (NSNumber *num in self.questions)
+    {
+        sumOfTime += [num doubleValue];
+    }
     
-//}
+    
+    float avgTime = sumOfTime/ [self.questions count];
+    
+    NSLog(@"Total time you took was: %ld Seconds with an average time of: %.1f seconds",(long)sumOfTime, avgTime);
+    
+    NSString *closer = @"DELETE THIS!";
+    return closer;
+}
 
 @end
